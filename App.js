@@ -13,14 +13,14 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.mainScene}>
 
-        <View>
+        <View style={styles.gamePresentation}>
           <Image source={logo} />
           <Image source={btnPlay} />
         </View>
 
-        <View>
+        <View style={styles.footer}>
           <Image source={btnAbout} />
           <Image source={btnOthers} />
         </View>
@@ -31,10 +31,18 @@ export default class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  mainScene: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#61BD8C',
   },
+  gamePresentation: {
+    flex: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  footer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  }
 });
