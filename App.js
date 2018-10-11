@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
 import { Router, Scene } from 'react-native-router-flux';
 
 import MainScene from './src/components/MainScene';
@@ -14,11 +13,11 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <Router>
+      <Router sceneStyle={{ paddingTop: 50 }}>
         <Scene key='root'>
-          <Scene key='mainScene' component = { MainScene } initil />
-          <Scene key='about' component = { About } />
-          <Scene key='others' component = { Others } />
+          <Scene key='mainScene' component = { MainScene } initil title="Cara ou Coroa"/>
+          <Scene key='about' component = { About } title="Sobre o jogo"/>
+          <Scene key='others' component = { Others } title="Outros jogos"/>
         </Scene>
       </Router>
     );
