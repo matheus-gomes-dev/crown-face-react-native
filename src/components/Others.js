@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text } from 'react-native';
 
-export default class Other extends Component {
+export default class Other extends React.Component {
   render() {
     return (
       <Text style={{ flex: 1, backgroundColor: '61BD8C' }}>

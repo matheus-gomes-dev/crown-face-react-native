@@ -1,9 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
-const logo = require('./assets/imgs/logo.png');
-const btnPlay = require('./assets/imgs/botao_jogar.png');
-const btnAbout = require('./assets/imgs/sobre_jogo.png');
-const btnOthers = require('./assets/imgs/outros_jogos.png');
+import { Router, Scene } from 'react-native-router-flux';
+
+import MainScene from './src/components/MainScene';
+import About from './src/components/About';
+import Others from './src/components/Others';
 
 export default class App extends React.Component {
 
@@ -13,36 +14,13 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <View style={styles.mainScene}>
-
-        <View style={styles.gamePresentation}>
-          <Image source={logo} />
-          <Image source={btnPlay} />
-        </View>
-
-        <View style={styles.footer}>
-          <Image source={btnAbout} />
-          <Image source={btnOthers} />
-        </View>
-
-      </View>
+      <Router>
+        <Scene key='root'>
+          <Scene key='mainScene' component = { MainScene } initil />
+          <Scene key='about' component = { About } />
+          <Scene key='others' component = { Others } />
+        </Scene>
+      </Router>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  mainScene: {
-    flex: 1,
-    backgroundColor: '#61BD8C',
-  },
-  gamePresentation: {
-    flex: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  footer: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between'
-  }
-});
