@@ -1,5 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
+const logo = require('./assets/imgs/logo.png');
+const btnPlay = require('./assets/imgs/botao_jogar.png');
+const btnAbout = require('./assets/imgs/sobre_jogo.png');
+const btnOthers = require('./assets/imgs/outros_jogos.png');
 
 export default class App extends React.Component {
 
@@ -10,7 +14,17 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+
+        <View>
+          <Image source={logo} />
+          <Image source={btnPlay} />
+        </View>
+
+        <View>
+          <Image source={btnAbout} />
+          <Image source={btnOthers} />
+        </View>
+
       </View>
     );
   }
